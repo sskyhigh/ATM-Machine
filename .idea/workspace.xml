@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fca7132d-94b8-464b-87d6-5ff27e5dfcf5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Check_Balance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Check_Balance.java" afterDir="false" />
-    </list>
+    <list default="true" id="fca7132d-94b8-464b-87d6-5ff27e5dfcf5" name="Changes" comment="Updated some files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +62,14 @@
       <updated>1662602511783</updated>
       <workItem from="1662602513597" duration="6311000" />
     </task>
+    <task id="LOCAL-00001" summary="Updated some files">
+      <created>1662666132938</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662666132938</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,6 +85,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated some files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated some files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
