@@ -1,8 +1,10 @@
-public class Deposit {
-    private double check_Balance;
+public class Deposit extends Check_Balance{
+    private double deposit;
 
     public Deposit(int balance) {
-        this.check_Balance = check_Balance;
+        this.deposit = deposit;
     }
-
+    public double getDeposit(){
+        return this.deposit;
+    }
 }

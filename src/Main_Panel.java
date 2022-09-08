@@ -1,5 +1,11 @@
+import java.util.Scanner
 public class Main_Panel {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Deposit Options = new Deposit()
+    }
+
+    public void userInput(){
+
     }
 }
