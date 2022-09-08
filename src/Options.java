@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Options {
@@ -6,6 +5,10 @@ public class Options {
     private int userCode;
     private int pinCode = 1111;
     private int max = 2;
+    private final int Deposit = 1;
+    private final int Withdrawal = 2;
+    private final int Check_Bal = 3;
+    private final int Exit = 4;
     Scanner sc = new Scanner(System.in);
 
     public void checkPinCode() {
@@ -37,22 +40,25 @@ public class Options {
                     "3 - Check Balance \n" +
                     "4-  Exit");
             userInput = sc.nextInt();
-            if (getUserInput() == 1) {
+            if (getUserInput() == Deposit) {
                 Deposit obj = new Deposit();
                 obj.depositAmount();
-            } else if (getUserInput() == 2) {
+            } else if (getUserInput() == Withdrawal) {
                 Transaction obj = new Transaction();
                 obj.trans();
-            }
-            else if(getUserInput() ==3){
-
-            }
-            if (userInput == 4) {
+            } else if (getUserInput() == Check_Bal) {
+                Check_Balance newBal = new Check_Balance();
+            } else if (userInput == Exit) {
                 return -1;
+            } else {
+                System.out.println("Invalid input!" +
+                        "Please enter another or -4 to exit");
+                userInput = sc.nextInt();
             }
         }
         return userInput;
     }
+
     public void setUserInput(int a) {
         userInput = a;
     }
