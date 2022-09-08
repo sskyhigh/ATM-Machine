@@ -8,8 +8,7 @@ public class Options {
     private int max = 2;
     Scanner sc = new Scanner(System.in);
 
-    public boolean checkPinCode() {
-        boolean right = false;
+    public void checkPinCode() {
         System.out.println("Please enter pin code to unlock: ");
         userCode = sc.nextInt();
         while (max > 0) {
@@ -27,11 +26,6 @@ public class Options {
                 break;
             }
         }
-        return right;
-    }
-
-    public boolean checkCode() {
-        return userCode == pinCode;
     }
 
     public int showScreen() {
@@ -43,18 +37,27 @@ public class Options {
                     "3 - Check Balance \n" +
                     "4-  Exit");
             userInput = sc.nextInt();
+            if (getUserInput() == 1) {
+                Deposit obj = new Deposit();
+                obj.depositAmount();
+            } else if (getUserInput() == 2) {
+                Transaction obj = new Transaction();
+                obj.trans();
+            }
+            else if(getUserInput() ==3){
+
+            }
             if (userInput == 4) {
                 return -1;
             }
         }
         return userInput;
     }
-
-    public int getUserCode() {
-        return this.userInput;
+    public void setUserInput(int a) {
+        userInput = a;
     }
 
     public int getUserInput() {
-        return this.userInput;
+        return userInput;
     }
 }

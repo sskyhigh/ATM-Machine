@@ -1,3 +1,3 @@
-public class Withdrawal extends Transaction{
+public class Withdrawal extends Check_Balance{
 
 }
