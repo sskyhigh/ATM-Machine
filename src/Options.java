@@ -33,27 +33,28 @@ public class Options {
 
     public int showScreen() {
         {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Please pick from the options: ");
-            System.out.println("1 - Deposit \n" +
-                    "2 - Withdrawal \n" +
-                    "3 - Check Balance \n" +
-                    "4-  Exit");
-            userInput = sc.nextInt();
-            if (getUserInput() == Deposit) {
-                Deposit obj = new Deposit();
-                obj.depositAmount();
-            } else if (getUserInput() == Withdrawal) {
-                Transaction obj = new Transaction();
-                obj.trans();
-            } else if (getUserInput() == Check_Bal) {
-                Check_Balance newBal = new Check_Balance();
-            } else if (userInput == Exit) {
-                return -1;
-            } else {
-                System.out.println("Invalid input!" +
-                        "Please enter another or -4 to exit");
+            try (Scanner sc = new Scanner(System.in)) {
+                System.out.println("Please pick from the options: ");
+                System.out.println("1 - Deposit \n" +
+                        "2 - Withdrawal \n" +
+                        "3 - Check Balance \n" +
+                        "4-  Exit");
                 userInput = sc.nextInt();
+                if (getUserInput() == Deposit) {
+                    Deposit obj = new Deposit();
+                    obj.depositAmount();
+                } else if (getUserInput() == Withdrawal) {
+                    Transaction obj = new Transaction();
+                    obj.trans();
+                } else if (getUserInput() == Check_Bal) {
+                    Check_Balance newBal = new Check_Balance();
+                } else if (userInput == Exit) {
+                    return -1;
+                } else {
+                    System.out.println("Invalid input!" +
+                            "Please enter another or -4 to exit");
+                    userInput = sc.nextInt();
+                }
             }
         }
         return userInput;
