@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="fca7132d-94b8-464b-87d6-5ff27e5dfcf5" name="Changes" comment="Updated some files" />
+=======
+    <list default="true" id="fca7132d-94b8-464b-87d6-5ff27e5dfcf5" name="Changes" comment="Updated some files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> c320a1b6ad4ed8c751a4b3e0b12d31817e81ee7b
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +41,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.general"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.customizations"
   }
 }]]></component>
   <component name="RunManager">
@@ -65,7 +78,13 @@
       <workItem from="1664822399782" duration="71000" />
       <workItem from="1664822488404" duration="14000" />
       <workItem from="1664831563803" duration="16000" />
+<<<<<<< HEAD
       <workItem from="1664831586938" duration="3656000" />
+=======
+      <workItem from="1664831586938" duration="2494000" />
+      <workItem from="1664840607601" duration="88000" />
+      <workItem from="1664840708686" duration="807000" />
+>>>>>>> c320a1b6ad4ed8c751a4b3e0b12d31817e81ee7b
     </task>
     <task id="LOCAL-00001" summary="Updated some files">
       <created>1662666132938</created>
