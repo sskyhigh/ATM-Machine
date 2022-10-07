@@ -59,6 +59,7 @@ public class Options {
         }
         return userInput;
     }
+
     public void setUserInput(int a) {
         userInput = a;
     }
