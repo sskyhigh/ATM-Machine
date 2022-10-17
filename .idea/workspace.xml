@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="fca7132d-94b8-464b-87d6-5ff27e5dfcf5" name="Changes" comment="Updated some files" />
-=======
-    <list default="true" id="fca7132d-94b8-464b-87d6-5ff27e5dfcf5" name="Changes" comment="Updated some files">
+    <list default="true" id="6572ec7f-6478-4118-9965-4a6e272d4de0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/FrontPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JFrameTitleCenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main_Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main_Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hello.java" beforeDir="false" />
     </list>
->>>>>>> c320a1b6ad4ed8c751a4b3e0b12d31817e81ee7b
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,34 +20,10 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2ESwtc2n3OW3gpMoQY9VEX1qKQ3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.updates"
-  }
-}]]></component>
   <component name="RunManager">
     <configuration name="Main_Panel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main_Panel" />
@@ -69,43 +41,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fca7132d-94b8-464b-87d6-5ff27e5dfcf5" name="Changes" comment="" />
-      <created>1662602511783</created>
+      <changelist id="6572ec7f-6478-4118-9965-4a6e272d4de0" name="Changes" comment="" />
+      <created>1666035175583</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1662602511783</updated>
-      <workItem from="1662602513597" duration="6311000" />
-      <workItem from="1664766052282" duration="617000" />
-      <workItem from="1664822399782" duration="71000" />
-      <workItem from="1664822488404" duration="14000" />
-      <workItem from="1664831563803" duration="16000" />
-<<<<<<< HEAD
-      <workItem from="1664831586938" duration="3656000" />
-=======
-      <workItem from="1664831586938" duration="2494000" />
-      <workItem from="1664840607601" duration="88000" />
-      <workItem from="1664840708686" duration="807000" />
-<<<<<<< HEAD
-      <workItem from="1664927706961" duration="101000" />
-      <workItem from="1664927829697" duration="14000" />
-<<<<<<< Updated upstream
-=======
->>>>>>> c320a1b6ad4ed8c751a4b3e0b12d31817e81ee7b
->>>>>>> 7a47473ca718a4e60cd9777ad000b4f6790f4471
-=======
-      <workItem from="1664933266717" duration="203000" />
-      <workItem from="1664933516675" duration="159000" />
-      <workItem from="1665000902635" duration="85000" />
->>>>>>> Stashed changes
+      <updated>1666035175583</updated>
+      <workItem from="1666035177190" duration="1558000" />
     </task>
-    <task id="LOCAL-00001" summary="Updated some files">
-      <created>1662666132938</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1662666132938</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,13 +63,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated some files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated some files" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
