@@ -42,7 +42,6 @@ public class Options {
                 userInput = sc.nextInt();
                 if (getUserInput() == Deposit) {
                     Deposit obj = new Deposit();
-                    obj.depositAmount();
                 } else if (getUserInput() == Withdrawal) {
                     Transaction obj = new Transaction();
                     obj.trans();

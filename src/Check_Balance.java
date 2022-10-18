@@ -1,6 +1,6 @@
 public class Check_Balance {
     private int update;
-    
+
     Deposit newDep = new Deposit();
 
 

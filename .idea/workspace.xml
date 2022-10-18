@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6572ec7f-6478-4118-9965-4a6e272d4de0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Check_Balance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Check_Balance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrontPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main_Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,14 +25,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Shao\IdeaProjects\ATM Machine\src" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main_Panel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main_Panel" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATM Machine" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -47,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666035175583</updated>
-      <workItem from="1666035177190" duration="17147000" />
+      <workItem from="1666035177190" duration="27776000" />
     </task>
     <servers />
   </component>

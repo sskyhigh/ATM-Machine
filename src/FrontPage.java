@@ -6,7 +6,12 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.TimerTask;
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 
 
 public class FrontPage implements ActionListener {
@@ -31,8 +36,22 @@ public class FrontPage implements ActionListener {
     private ImageIcon image;
     private JSeparator separator = new JSeparator();
     private JSeparator separator2 = new JSeparator();
-
+    private final JPanel statusPanel = new JPanel();
     public FrontPage() throws IOException, URISyntaxException {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/DD/YYYY HH:MM:SS");
+        LocalDateTime now = LocalDateTime.now();
+
+        statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
+        frame.add(statusPanel, BorderLayout.SOUTH);
+        statusPanel.setPreferredSize(new Dimension(frame.getWidth(), 16));
+        statusPanel.setLayout(new BoxLayout(statusPanel, BoxLayout.X_AXIS));
+        JLabel statusLabel = new JLabel("Application is running.");
+        JLabel time = new JLabel();
+        statusLabel.setHorizontalAlignment(SwingConstants.LEFT);
+        statusPanel.add(statusLabel);
+        statusPanel.add(time);
+
         image = new ImageIcon(getClass().getResource("cover.png"));
         Image help = image.getImage();
         Image part = help.getScaledInstance(250, 50, java.awt.Image.SCALE_SMOOTH);
@@ -93,6 +112,7 @@ public class FrontPage implements ActionListener {
         login.setBackground(Color.decode("#0077be"));
         login.setForeground(Color.white);
         login.setFocusable(false);
+        login.addActionListener(this);
 
         forgot_Pass.setBounds(350, 110, 130, 30);
         forgot_Pass.setForeground(Color.decode("#36C"));
@@ -119,6 +139,7 @@ public class FrontPage implements ActionListener {
                     }
                 }
         );
+
 
         logging_in.setBounds(350, 135, 130, 30);
         logging_in.setForeground(Color.decode("#36C"));
@@ -208,6 +229,12 @@ public class FrontPage implements ActionListener {
         if (event.getSource() == login) {
             obtainUsername = userField.getText();
             password = String.valueOf(passwordField.getPassword());
+            frame.dispose();
+            try {
+                BackPage backPage = new BackPage();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
