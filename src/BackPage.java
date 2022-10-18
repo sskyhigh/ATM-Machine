@@ -58,7 +58,7 @@ public class BackPage extends Thread implements ActionListener, Runnable {
         transactions.setBounds(275, 75, 120, 35);
         transactions.setBackground(Color.decode("#238636"));
         transactions.setForeground(Color.BLACK);
-        transactions.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14));
+        transactions.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
         transactions.addActionListener(this);
 
         balance.setFocusable(false);
