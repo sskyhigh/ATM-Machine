@@ -15,7 +15,12 @@ public class BackPage implements ActionListener{
     private final JButton deposit = new JButton("Deposit");
 
     public BackPage(){
-        frame.setSize();
+
+
+
+        frame.setSize(600,400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
