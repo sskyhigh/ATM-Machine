@@ -22,6 +22,7 @@ public class BackPage extends Thread implements ActionListener, Runnable {
     private final JButton deposit = new JButton("Deposit");
     private final JButton logout = new JButton("LogOut");
     private final JButton help = new JButton("Support");
+    private final JButton feedback = new JButton("Feedback");
     private final JLabel title = new JLabel("Welcome");
     private final JLabel holder;
     private final ImageIcon red;
@@ -89,6 +90,13 @@ public class BackPage extends Thread implements ActionListener, Runnable {
         help.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 18));
         help.addActionListener(this);
 
+        feedback.setFocusable(false);
+        feedback.setBounds(70, 280, 120, 35);
+        feedback.setBackground(Color.decode("#238636"));
+        feedback.setForeground(Color.BLACK);
+        feedback.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 18));
+        feedback.addActionListener(this);
+
         frame.setSize(475, 450);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -100,6 +108,7 @@ public class BackPage extends Thread implements ActionListener, Runnable {
         frame.add(deposit);
         frame.add(logout);
         frame.add(help);
+        frame.add(feedback);
         frame.add(holder);
     }
 
@@ -115,7 +124,12 @@ public class BackPage extends Thread implements ActionListener, Runnable {
             // do something here.
         }
         if (e.getSource() == deposit) {
-            // do something here.
+            try {
+                //Deposit deposit1 = new Deposit();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+            frame.dispose();
         }
         if (e.getSource() == logout) {
             int n = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
@@ -132,6 +146,14 @@ public class BackPage extends Thread implements ActionListener, Runnable {
         if (e.getSource() == help) {
             try {
                 String url = "https://bit.ly/3EUv5QZ";
+                Desktop.getDesktop().browse(URI.create(url));
+            } catch (IOException ioException) {
+                System.out.println(ioException.getMessage());
+            }
+        }
+        if (e.getSource() == feedback) {
+            try {
+                String url = "https://forms.gle/e9G5vLM6J6AiGJ8i8";
                 Desktop.getDesktop().browse(URI.create(url));
             } catch (IOException ioException) {
                 System.out.println(ioException.getMessage());
