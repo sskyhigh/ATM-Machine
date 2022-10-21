@@ -15,20 +15,20 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 import javax.swing.text.NumberFormatter;
 
-public class Deposit implements ActionListener {
+public class Withdrawal implements ActionListener {
 
-    private final JFrame frame = new JFrame("Deposit Page");
+    private final JFrame frame = new JFrame("Withdrawal Page");
     private final JTextField insertAmount = new JTextField("");
-    private final JLabel label = new JLabel("Deposit amount: ");
+    private final JLabel label = new JLabel("Withdrawal amount: ");
     private final JButton goBack = new JButton("Go back");
-    private final JButton DepositButton = new JButton("Deposit");
+    private final JButton DepositButton = new JButton("Withdraw");
     private final JButton[] amount = new JButton[5];
     NumberFormat format = NumberFormat.getInstance();
     NumberFormatter formatter = new NumberFormatter(format);
     JFormattedTextField formattedTextField = new JFormattedTextField(formatter);
 
 
-    public Deposit() {
+    public Withdrawal() {
 
         formatter.setValueClass(Integer.class);
         formatter.setMinimum(0);
@@ -106,7 +106,6 @@ public class Deposit implements ActionListener {
                 }
             } catch (Exception exception) {
                 JOptionPane.showMessageDialog(null, "invalid amount");
-
             }
         }
         if (clicked.getSource() == amount[0]) {

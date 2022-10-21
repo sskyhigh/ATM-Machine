@@ -115,7 +115,12 @@ public class BackPage extends Thread implements ActionListener, Runnable {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == manageAccounts) {
-            // do something here.
+            try {
+                Withdrawal withdrawal = new Withdrawal();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+            frame.dispose();
         }
         if (e.getSource() == transactions) {
             // do something here.
@@ -125,7 +130,7 @@ public class BackPage extends Thread implements ActionListener, Runnable {
         }
         if (e.getSource() == deposit) {
             try {
-                //Deposit deposit1 = new Deposit();
+                Deposit deposit1 = new Deposit();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
