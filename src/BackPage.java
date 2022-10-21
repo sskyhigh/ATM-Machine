@@ -18,7 +18,7 @@ public class BackPage extends Thread implements ActionListener, Runnable {
     private final JFrame frame = new JFrame("Main Panel");
     private final JButton manageAccounts = new JButton("Manage");
     private final JButton transactions = new JButton("Transactions");
-    private final JButton balance = new JButton("Balance");
+    private final JButton balance = new JButton("Withdraw");
     private final JButton deposit = new JButton("Deposit");
     private final JButton logout = new JButton("LogOut");
     private final JButton help = new JButton("Support");
