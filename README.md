@@ -1,5 +1,5 @@
 # ATM-Machine
-A Work in progress, using SQL to insert data
+A Work in progress, using SQL + firebase soon to store user's data
 
 More features to be added soon! Please share your ideas/designs/features here: 
 
