@@ -1,11 +1,11 @@
 # ATM-Machine
-A Work in progress
+A Work in progress, using SQL + firebase soon to store user's data
 
-More features to be added soon! Please share your ideas/designs/features here: 
+More features to be added soon! Please share your ideas/designs/features here: (or you can email me)
 
 https://forms.gle/ke37bcv6KsAGFCHKA
 
-Front End of the program: (Borrowed Bank of America's login page Idea)
+Front End of the program: (Similiar to  BOAs login page: https://secure.bankofamerica.com/login/sign-in/signOnV2Screen.go)
 
 ![Snipaste_2022-10-23_15-36-15](https://user-images.githubusercontent.com/98570636/197414302-e0e71c23-ee24-4be6-8f5e-83595ea5385e.png)
 
