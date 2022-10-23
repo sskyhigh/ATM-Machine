@@ -1,5 +1,5 @@
 # ATM-Machine
-A Work in progress
+A Work in progress, using SQL to insert data
 
 More features to be added soon! Please share your ideas/designs/features here: 
 
