@@ -39,9 +39,6 @@ public class FrontPage implements ActionListener {
     private final JPanel statusPanel = new JPanel();
     public FrontPage() throws IOException, URISyntaxException {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/DD/YYYY HH:MM:SS");
-        LocalDateTime now = LocalDateTime.now();
-
         statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
         frame.add(statusPanel, BorderLayout.SOUTH);
         statusPanel.setPreferredSize(new Dimension(frame.getWidth(), 16));
@@ -229,12 +226,12 @@ public class FrontPage implements ActionListener {
         if (event.getSource() == login) {
             obtainUsername = userField.getText();
             password = String.valueOf(passwordField.getPassword());
-            frame.dispose();
             try {
-                BackPage backPage = new BackPage();
-            } catch (IOException e) {
+                LoginPanel loginPanel = new LoginPanel(obtainUsername, password);
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+            frame.dispose();
         }
     }
 }

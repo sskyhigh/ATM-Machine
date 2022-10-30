@@ -1,14 +1,17 @@
-import com.mysql.cj.protocol.Resultset;
-import com.mysql.jdbc.Driver;
-
+import javax.swing.*;
 import java.sql.*;
+import javax.swing.JFrame;
 
 public class LoginPanel {
     String user = "root";
     String location = "jdbc:mysql://localhost:3306/boa_credentials";
     String pass = "Magnum12!";
+    private String usr;
+    private String psw;
 
-    public LoginPanel() {
+    public LoginPanel(String obtainUsername, String password) {
+        this.usr = obtainUsername;
+        this.psw = password;
         try {
             Connection connection = DriverManager.getConnection(location, user, pass);
             Statement statement = connection.createStatement();
@@ -17,7 +20,17 @@ public class LoginPanel {
             while (help.next()) {
                 String username = help.getString("Username");
                 String pass = help.getString("Password");
-                System.out.printf("%s %s\n", username, pass);
+
+                if (usr.equals(username) && psw.equals(pass)) {
+                    try {
+                        BackPage backPage = new BackPage();
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Incorrect user or psw");
+                }
+                //System.out.printf("%s %s\n", username, pass);
             }
             System.out.println("Connected");
         } catch (SQLException e) {
