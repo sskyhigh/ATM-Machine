@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6572ec7f-6478-4118-9965-4a6e272d4de0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Library/mysql-connector-j-8.0.31.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATM Machine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ATM Machine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +90,7 @@
       <workItem from="1666560856496" duration="1356000" />
       <workItem from="1666576912177" duration="698000" />
       <workItem from="1666640791450" duration="525000" />
-      <workItem from="1667171018644" duration="161000" />
+      <workItem from="1667171018644" duration="1086000" />
     </task>
     <servers />
   </component>
