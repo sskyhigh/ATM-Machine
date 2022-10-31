@@ -11,31 +11,31 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.event.KeyEvent;
 
-public class FrontPage implements ActionListener, KeyListener {
-    private final JFrame frame = new JFrame("Login panel");
+public class Register implements ActionListener {
+    private final JFrame frame = new JFrame("Register Panel");
     private final JLabel _username = new JLabel("User ID: ");
     private final JLabel labelPassword = new JLabel("Password:");
     private final JLabel back;
     private final JLabel loginHelp = new JLabel("Login help");
     private final JLabel forgot_Pass = new JLabel("Forgot ID/Password?");
     private final JLabel logging_in = new JLabel("Problem logging in?");
-    private final JLabel notAMember = new JLabel("Not using Online Banking?");
-    private final JLabel enrollNow = new JLabel("Enroll now");
+    private final JLabel notAMember = new JLabel("Already a member?");
+    private final JLabel enrollNow = new JLabel("Login now");
     private final JLabel learnMore = new JLabel("Learn more about Online Banking");
     private final JLabel service = new JLabel("Service Agreement");
     private final JTextField userField = new JTextField();
     private final JPasswordField passwordField = new JPasswordField();
-    private final JButton login = new JButton("Log In");
+    private final JButton login = new JButton("Register");
     private String obtainUsername;
     private String password;
-    private JLabel support = new JLabel("Forgot your password?");
+    private JLabel support = new JLabel("Don't have email?");
     private JCheckBox checkBox = new JCheckBox("Save this user ID");
     private ImageIcon image;
     private JSeparator separator = new JSeparator();
     private JSeparator separator2 = new JSeparator();
     private final JPanel statusPanel = new JPanel();
 
-    public FrontPage() throws IOException, URISyntaxException {
+    public Register() throws IOException, URISyntaxException {
 
         statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
         frame.add(statusPanel, BorderLayout.SOUTH);
@@ -78,7 +78,7 @@ public class FrontPage implements ActionListener, KeyListener {
 
 
         passwordField.setBounds(50, 200, 180, 25);
-        passwordField.addKeyListener(this);
+        passwordField.addActionListener(this);
         support.setForeground(Color.blue);
         support.addMouseListener(
                 new MouseAdapter() {
@@ -98,7 +98,7 @@ public class FrontPage implements ActionListener, KeyListener {
 
         notAMember.setBounds(350, 160, 200, 50);
         notAMember.setFont(new Font(null, Font.PLAIN, 16));
-        loginHelp.setForeground(Color.decode("#d4001a"));
+        notAMember.setForeground(Color.decode("#d4001a"));
 
         support.setBounds(50, 230, 180, 25);
         separator.setBounds(350, 105, 130, 30);
@@ -161,9 +161,9 @@ public class FrontPage implements ActionListener, KeyListener {
                     @Override
                     public void mouseClicked(MouseEvent e) {
                         try {
-                            Register register = new Register();
-                        } catch (Exception ioException) {
-                            System.out.println(ioException.getMessage());
+                            FrontPage frontPage = new FrontPage();
+                        } catch (Exception E) {
+                            System.out.println(E.getMessage());
                         }
                         frame.dispose();
                     }
@@ -235,28 +235,17 @@ public class FrontPage implements ActionListener, KeyListener {
         }
     }
 
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+    public void textAction(KeyEvent event) {
+        if (event.getSource().equals(KeyEvent.VK_ENTER)) {
             obtainUsername = userField.getText();
             password = String.valueOf(passwordField.getPassword());
             try {
                 LoginPanel loginPanel = new LoginPanel(obtainUsername, password);
-            } catch (Exception event) {
-                throw new RuntimeException(event);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
             frame.dispose();
         }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
     }
 }
 
