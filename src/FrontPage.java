@@ -1,8 +1,5 @@
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -12,7 +9,7 @@ import java.util.Date;
 import java.util.TimerTask;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
-
+import java.awt.event.KeyEvent;
 
 public class FrontPage implements ActionListener {
     private final JFrame frame = new JFrame("Login panel");
@@ -37,6 +34,7 @@ public class FrontPage implements ActionListener {
     private JSeparator separator = new JSeparator();
     private JSeparator separator2 = new JSeparator();
     private final JPanel statusPanel = new JPanel();
+
     public FrontPage() throws IOException, URISyntaxException {
 
         statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
@@ -80,6 +78,7 @@ public class FrontPage implements ActionListener {
 
 
         passwordField.setBounds(50, 200, 180, 25);
+        passwordField.addActionListener(this);
         support.setForeground(Color.blue);
         support.addMouseListener(
                 new MouseAdapter() {
@@ -224,6 +223,19 @@ public class FrontPage implements ActionListener {
 
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == login) {
+            obtainUsername = userField.getText();
+            password = String.valueOf(passwordField.getPassword());
+            try {
+                LoginPanel loginPanel = new LoginPanel(obtainUsername, password);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            frame.dispose();
+        }
+    }
+
+    public void textAction(KeyEvent event) {
+        if (event.getSource().equals(KeyEvent.VK_ENTER)) {
             obtainUsername = userField.getText();
             password = String.valueOf(passwordField.getPassword());
             try {

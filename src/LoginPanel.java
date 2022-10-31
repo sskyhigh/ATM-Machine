@@ -8,6 +8,7 @@ public class LoginPanel {
     String pass = "Magnum12!";
     private String usr;
     private String psw;
+    private String username;
 
     public LoginPanel(String obtainUsername, String password) {
         this.usr = obtainUsername;
@@ -18,23 +19,24 @@ public class LoginPanel {
             ResultSet help = statement.executeQuery("select * from boa_credentials.credentials");
 
             while (help.next()) {
-                String username = help.getString("Username");
-                String pass = help.getString("Password");
-
-                if (usr.equals(username) && psw.equals(pass)) {
+                username = help.getString("Username");
+                psw = help.getString("Password");
+                if (!usr.equals(username)) {
+                    try {
+                        JOptionPane.showMessageDialog(null, "Wrong credentials");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
                     try {
                         BackPage backPage = new BackPage();
                     } catch (Exception exception) {
                         exception.printStackTrace();
                     }
-                } else {
-                    JOptionPane.showMessageDialog(null, "Incorrect user or psw");
                 }
-                //System.out.printf("%s %s\n", username, pass);
             }
-            System.out.println("Connected");
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
