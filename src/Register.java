@@ -76,7 +76,6 @@ public class Register implements ActionListener {
         loginHelp.setForeground(Color.decode("#d4001a"));
         loginHelp.setFont(new Font(null, Font.PLAIN, 16));
 
-
         passwordField.setBounds(50, 200, 180, 25);
         passwordField.addActionListener(this);
         support.setForeground(Color.blue);
