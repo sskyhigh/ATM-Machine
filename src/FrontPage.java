@@ -26,6 +26,7 @@ public class FrontPage implements ActionListener, KeyListener {
     private final JTextField userField = new JTextField();
     private final JPasswordField passwordField = new JPasswordField();
     private final JButton login = new JButton("Log In");
+    private final JPanel statusPanel = new JPanel();
     private String obtainUsername;
     private String password;
     private JLabel support = new JLabel("Forgot your password?");
@@ -33,7 +34,6 @@ public class FrontPage implements ActionListener, KeyListener {
     private ImageIcon image;
     private JSeparator separator = new JSeparator();
     private JSeparator separator2 = new JSeparator();
-    private final JPanel statusPanel = new JPanel();
 
     public FrontPage() throws IOException, URISyntaxException {
 
@@ -80,19 +80,17 @@ public class FrontPage implements ActionListener, KeyListener {
         passwordField.setBounds(50, 200, 180, 25);
         passwordField.addKeyListener(this);
         support.setForeground(Color.blue);
-        support.addMouseListener(
-                new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        try {
-                            String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
-                            Desktop.getDesktop().browse(URI.create(url));
-                        } catch (IOException ioException) {
-                            System.out.println(ioException.getMessage());
-                        }
-                    }
+        support.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
+                    Desktop.getDesktop().browse(URI.create(url));
+                } catch (IOException ioException) {
+                    System.out.println(ioException.getMessage());
                 }
-        );
+            }
+        });
         checkBox.setBounds(46, 140, 180, 25);
         checkBox.setFocusable(false);
 
@@ -113,94 +111,78 @@ public class FrontPage implements ActionListener, KeyListener {
 
         forgot_Pass.setBounds(350, 110, 130, 30);
         forgot_Pass.setForeground(Color.decode("#36C"));
-        forgot_Pass.addMouseListener(
-                new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        try {
-                            String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
-                            Desktop.getDesktop().browse(URI.create(url));
-                        } catch (IOException ioException) {
-                            System.out.println(ioException.getMessage());
-                        }
-                    }
+        forgot_Pass.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
+                    Desktop.getDesktop().browse(URI.create(url));
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
+            }
 
-                    @Override
-                    public void mouseDragged(MouseEvent e) {
-                        try {
-                            String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
-                            Desktop.getDesktop().browse(URI.create(url));
-                        } catch (IOException ioException) {
-                            System.out.println(ioException.getMessage());
-                        }
-                    }
-                }
-        );
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                try {
+                    String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
+                    Desktop.getDesktop().browse(URI.create(url));
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
+            }
+        });
 
 
         logging_in.setBounds(350, 135, 130, 30);
         logging_in.setForeground(Color.decode("#36C"));
-        logging_in.addMouseListener(
-                new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        try {
-                            String url = "https://www.bankofamerica.com/customer-service/contact-us/bank-of-america-login-issues/";
-                            Desktop.getDesktop().browse(URI.create(url));
-                        } catch (IOException ioException) {
-                            System.out.println(ioException.getMessage());
-                        }
-                    }
-                }
-        );
+        logging_in.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    String url =
+                            "https://www.bankofamerica" + ".com/customer-service/contact-us" +
+                                    "/bank-of-america-login-issues/";
+                    Desktop.getDesktop().browse(URI.create(url));
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
+            }
+        });
 
         enrollNow.setBounds(350, 210, 130, 30);
         enrollNow.setForeground(Color.decode("#36C"));
-        enrollNow.addMouseListener(
-                new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        try {
-                            Register register = new Register();
-                        } catch (Exception ioException) {
-                            System.out.println(ioException.getMessage());
-                        }
-                        frame.dispose();
-                    }
-                }
-        );
+        enrollNow.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    Register register = new Register();
+                } catch (Exception e1) {System.out.println(e1.getMessage());}
+                frame.dispose();
+            }
+        });
 
         learnMore.setBounds(350, 235, 220, 30);
         learnMore.setForeground(Color.decode("#36C"));
-        learnMore.addMouseListener(
-                new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        try {
-                            String url = "https://www.bankofamerica.com/online-banking/mobile-and-online-banking-features/";
-                            Desktop.getDesktop().browse(URI.create(url));
-                        } catch (IOException ioException) {
-                            System.out.println(ioException.getMessage());
-                        }
-                    }
-                }
-        );
+        learnMore.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    String url =
+                            "https://www.bankofamerica" + ".com/online-banking/mobile-and" +
+                                    "-online-banking-features/";
+                    Desktop.getDesktop().browse(URI.create(url));
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
+            }
+        });
 
         service.setBounds(349, 260, 220, 30);
         service.setForeground(Color.decode("#36C"));
-        service.addMouseListener(
-                new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        try {
-                            String url = "https://www.bankofamerica.com/online-banking/service-agreement.go";
-                            Desktop.getDesktop().browse(URI.create(url));
-                        } catch (IOException ioException) {
-                            System.out.println(ioException.getMessage());
-                        }
-                    }
-                }
-        );
+        service.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    String url =
+                            "https://www.bankofamerica.com/online-banking/service-agreement" +
+                                    ".go";
+                    Desktop.getDesktop().browse(URI.create(url));
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
+            }
+        });
 
         frame.add(separator);
         frame.add(loginHelp);
@@ -228,16 +210,14 @@ public class FrontPage implements ActionListener, KeyListener {
             password = String.valueOf(passwordField.getPassword());
             try {
                 LoginPanel loginPanel = new LoginPanel(obtainUsername, password);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            } catch (Exception e) {throw new RuntimeException(e);}
             frame.dispose();
         }
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+        ;
     }
 
     @Override
@@ -247,16 +227,14 @@ public class FrontPage implements ActionListener, KeyListener {
             password = String.valueOf(passwordField.getPassword());
             try {
                 LoginPanel loginPanel = new LoginPanel(obtainUsername, password);
-            } catch (Exception event) {
-                throw new RuntimeException(event);
-            }
+            } catch (Exception event) {throw new RuntimeException(event);}
             frame.dispose();
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+        ;
     }
 }
 

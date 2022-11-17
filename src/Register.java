@@ -114,7 +114,7 @@ public class Register implements ActionListener {
                 try {
                     String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
                     Desktop.getDesktop().browse(URI.create(url));
-                } catch (IOException ioException) {System.out.println(ioException.getMessage());}
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
             }
 
             @Override
@@ -122,7 +122,7 @@ public class Register implements ActionListener {
                 try {
                     String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
                     Desktop.getDesktop().browse(URI.create(url));
-                } catch (IOException ioException) {System.out.println(ioException.getMessage());}
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
             }
         });
 
@@ -137,7 +137,7 @@ public class Register implements ActionListener {
                             "https://www.bankofamerica" + ".com/customer-service/contact-us" +
                                     "/bank-of-america-login-issues/";
                     Desktop.getDesktop().browse(URI.create(url));
-                } catch (IOException ioException) {System.out.println(ioException.getMessage());}
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
             }
         });
 
@@ -163,7 +163,7 @@ public class Register implements ActionListener {
                             "https://www.bankofamerica" + ".com/online-banking/mobile-and" +
                                     "-online-banking-features/";
                     Desktop.getDesktop().browse(URI.create(url));
-                } catch (IOException ioException) {System.out.println(ioException.getMessage());}
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
             }
         });
 
@@ -177,7 +177,7 @@ public class Register implements ActionListener {
                             "https://www.bankofamerica.com/online-banking/service-agreement" +
                                     ".go";
                     Desktop.getDesktop().browse(URI.create(url));
-                } catch (IOException ioException) {System.out.println(ioException.getMessage());}
+                } catch (IOException e1) {System.out.println(e1.getMessage());}
             }
         });
 

@@ -91,9 +91,7 @@ public class Withdrawal implements ActionListener {
         if (clicked.getSource() == goBack) {
             try {
                 BackPage backPage = new BackPage();
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+            } catch (Exception exception) {exception.printStackTrace();}
             frame.dispose();
         }
         if (clicked.getSource() == DepositButton) {
@@ -111,37 +109,27 @@ public class Withdrawal implements ActionListener {
         if (clicked.getSource() == amount[0]) {
             try {
                 formattedTextField.setText(amount[0].getText());
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+            } catch (Exception exception) {exception.printStackTrace();}
         }
         if (clicked.getSource() == amount[1]) {
             try {
                 formattedTextField.setText(amount[1].getText());
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+            } catch (Exception exception) {exception.printStackTrace();}
         }
         if (clicked.getSource() == amount[2]) {
             try {
                 formattedTextField.setText(amount[2].getText());
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+            } catch (Exception exception) {exception.printStackTrace();}
         }
         if (clicked.getSource() == amount[3]) {
             try {
                 formattedTextField.setText(amount[3].getText());
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+            } catch (Exception exception) {exception.printStackTrace();}
         }
         if (clicked.getSource() == amount[4]) {
             try {
                 formattedTextField.setText(amount[4].getText());
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+            } catch (Exception exception) {exception.printStackTrace();}
         }
     }
 }

@@ -21,23 +21,17 @@ public class LoginPanel {
             while (help.next()) {
                 username = help.getString("Username");
                 psw = help.getString("Password");
-
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        } catch (SQLException e) {e.printStackTrace();}
+
         if (!usr.equals(username)) {
             try {
                 JOptionPane.showMessageDialog(null, "Wrong credentials");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            } catch (Exception e) {e.printStackTrace();}
         } else {
             try {
                 BackPage backPage = new BackPage();
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+            } catch (Exception exception) {exception.printStackTrace();}
         }
     }
 }
