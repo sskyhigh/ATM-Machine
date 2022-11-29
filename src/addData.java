@@ -30,4 +30,3 @@ public class addData {
         preparedStatement.executeUpdate();
     }
 }
-

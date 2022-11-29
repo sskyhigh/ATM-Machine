@@ -75,9 +75,7 @@ public class Withdrawal implements ActionListener {
         DepositButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
         DepositButton.addActionListener(this);
 
-        for (int i = 0; i < 5; ++i) {
-            frame.add(amount[i]);
-        }
+        for (int i = 0; i < 5; ++i) frame.add(amount[i]);
 
         frame.add(goBack);
         frame.add(DepositButton);
@@ -97,14 +95,11 @@ public class Withdrawal implements ActionListener {
         if (clicked.getSource() == DepositButton) {
             try {
                 int val = Integer.parseInt(formattedTextField.getText());
-                if (val > 10000) {
-                    JOptionPane.showMessageDialog(null, "Amount cannot cross $10000!");
-                } else {
-                    // code goes here.
+                if (val > 10000) JOptionPane.showMessageDialog(null, "Amount cannot cross $10000!");
+                else {
+                    // Some code goes here...
                 }
-            } catch (Exception exception) {
-                JOptionPane.showMessageDialog(null, "invalid amount");
-            }
+            } catch (Exception exception) {JOptionPane.showMessageDialog(null, "invalid amount");}
         }
         if (clicked.getSource() == amount[0]) {
             try {
