@@ -27,7 +27,8 @@ public class LoginPanel {
         if (!usr.equals(username)) {
             try {
                 JOptionPane.showMessageDialog(null, "Wrong credentials");
-            } catch (Exception e) {e.printStackTrace();}
+                return;
+            } catch (Exception e) {e.printStackTrace(); return;}
         } else {
             try {
                 BackPage backPage = new BackPage();
