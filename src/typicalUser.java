@@ -9,10 +9,14 @@ public class typicalUser {
         passWord = passWord;
     }
 
-    
+    public String getUserName() {return userName;}
+
+    public String getPassWord() {return passWord;}
+
+    public void setPassWord(String passWord) {this.passWord = passWord;}
+
+    public void setUsername(String userName) {this.userName = userName;}
 
     @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%s" + id, deposit, withdraw, balance);
-    }
+    public String toString() {return String.format("%s,%s,%s" + funds, userName, passWord);}
 }

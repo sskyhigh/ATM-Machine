@@ -7,6 +7,7 @@ public class addData {
     private String userName = null;
     private String passWord = null;
     private String addInfo = null;
+    private Connection connection;
     private PreparedStatement preparedStatement;
 
     public addData(String Name, String passWord) throws SQLException {
@@ -14,14 +15,19 @@ public class addData {
         this.passWord = passWord;
 
         try {
-            Connection connection = DriverManager.getConnection(location, user, pass);
+            connection = DriverManager.getConnection(location, user, pass);
             Statement statement = connection.createStatement();
             ResultSet help = statement.executeQuery("select * from boa_credentials.credentials");
-
-            preparedStatement = connection.prepareStatement("insert into credentials" +
-                    "(Username, " + "Password)" + "values (?, ?)");
-            preparedStatement.setString(1, );
         } catch (Exception exception) {exception.printStackTrace();}
+    }
+
+    public void saveData(typicalUser user) throws Exception {
+        preparedStatement =
+                connection.prepareStatement("insert into credentials" + "(Username, " +
+                        "Password)" + "values (?, ?)");
+        preparedStatement.setString(1, user.getUserName());
+        preparedStatement.setString(2, user.getPassWord());
+        preparedStatement.executeUpdate();
     }
 }
 
