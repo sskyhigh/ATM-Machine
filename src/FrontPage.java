@@ -86,9 +86,7 @@ public class FrontPage implements ActionListener, KeyListener {
                 try {
                     String url = "https://secure.bankofamerica.com/auth/forgot/reset-entry/";
                     Desktop.getDesktop().browse(URI.create(url));
-                } catch (IOException ioException) {
-                    System.out.println(ioException.getMessage());
-                }
+                } catch (IOException ioException) {System.out.println(ioException.getMessage());}
             }
         });
         checkBox.setBounds(46, 140, 180, 25);

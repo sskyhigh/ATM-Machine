@@ -24,8 +24,8 @@ public class BackPage extends Thread implements ActionListener, Runnable {
     private final JButton help = new JButton("Support");
     private final JButton feedback = new JButton("Feedback");
     private final JLabel title = new JLabel("Welcome");
-    private final JLabel holder;
-    private final ImageIcon red;
+    //private final JLabel holder;
+    //private final ImageIcon red;
     protected boolean isRunning;
     protected JLabel dateLabel;
     protected JLabel timeLabel;
@@ -42,8 +42,8 @@ public class BackPage extends Thread implements ActionListener, Runnable {
         statusLabel.setHorizontalAlignment(SwingConstants.LEFT);
         statusPanel.add(statusLabel);
 
-        red = new ImageIcon(getClass().getResource("lowres.jpg"));
-        holder = new JLabel(red);
+        //red = new ImageIcon(getClass().getResource("lowres.jpg"));
+        //holder = new JLabel(red);
         title.setBounds(180, 10, 120, 50);
         title.setFont(new Font(Font.MONOSPACED, Font.BOLD, 18));
         title.setForeground(Color.GREEN);
@@ -109,7 +109,7 @@ public class BackPage extends Thread implements ActionListener, Runnable {
         frame.add(logout);
         frame.add(help);
         frame.add(feedback);
-        frame.add(holder);
+        //frame.add(holder);
     }
 
     @Override
@@ -117,9 +117,7 @@ public class BackPage extends Thread implements ActionListener, Runnable {
         if (e.getSource() == manageAccounts) {
             try {
                 Withdrawal withdrawal = new Withdrawal();
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+            } catch (Exception exception) {exception.printStackTrace();}
             frame.dispose();
         }
         if (e.getSource() == transactions) {
@@ -129,22 +127,18 @@ public class BackPage extends Thread implements ActionListener, Runnable {
             // do something here.
         }
         if (e.getSource() == deposit) {
-            try {
-                Deposit deposit1 = new Deposit();
-            } catch (Exception exception) {
+            try {Deposit deposit1 = new Deposit();} catch (Exception exception) {
                 exception.printStackTrace();
             }
             frame.dispose();
         }
         if (e.getSource() == logout) {
-            int n = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
-                    "Log Out", JOptionPane.YES_NO_OPTION);
+            int n = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?", "Log"
+                    + " Out", JOptionPane.YES_NO_OPTION);
             if (n == 0) {
                 try {
                     FrontPage frontPage = new FrontPage();
-                } catch (IOException | URISyntaxException ex) {
-                    throw new RuntimeException(ex);
-                }
+                } catch (IOException | URISyntaxException ex) {throw new RuntimeException(ex);}
                 frame.dispose();
             }
         }
@@ -152,17 +146,13 @@ public class BackPage extends Thread implements ActionListener, Runnable {
             try {
                 String url = "https://bit.ly/3EUv5QZ";
                 Desktop.getDesktop().browse(URI.create(url));
-            } catch (IOException ioException) {
-                System.out.println(ioException.getMessage());
-            }
+            } catch (IOException ioException) {System.out.println(ioException.getMessage());}
         }
         if (e.getSource() == feedback) {
             try {
                 String url = "https://forms.gle/e9G5vLM6J6AiGJ8i8";
                 Desktop.getDesktop().browse(URI.create(url));
-            } catch (IOException ioException) {
-                System.out.println(ioException.getMessage());
-            }
+            } catch (IOException ioException) {System.out.println(ioException.getMessage());}
         }
     }
 }
