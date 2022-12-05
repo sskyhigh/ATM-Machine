@@ -191,7 +191,7 @@ public class Register implements ActionListener {
         frame.add(passwordField);
         frame.add(support);
         frame.add(login);
-        frame.add(back);
+        //frame.add(back);
         frame.add(logging_in);
         frame.add(notAMember);
         frame.add(forgot_Pass);
