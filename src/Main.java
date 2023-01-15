@@ -3,6 +3,7 @@ import java.net.URISyntaxException;
 
 public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
-        Register register = new Register();
+        System.out.println(500);
+        // Register register = new Register();
     }
 }
