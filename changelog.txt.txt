@@ -1,0 +1,12 @@
+1. Added a new JFrame class for updating account credentials.
+2. Fixed an issue where sometimes the contents of the frame wouldn't render properly.
+3. Added a function for checking available account balance.
+4. Added a checkmark for success messages to better represent the completion of the task.
+5. Added the functionality to hash the password before storing in the database.
+6. Added icons to the buttons in main page for better user interaction.
+7. Remastered the colors and fonts to achieve a clearer interface.
+8. Removed the annoying outline on the text of a buttun when clicked.
+9. Disabled resizable windows to avoid graphics bugs.
+10. Added interactive messages for better user understanding.
+
+11. Some other minor bug fixes and code optimizations.
