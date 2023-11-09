@@ -20,18 +20,18 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 ## ATM MACHINE: 
 
 A mini full stack Java Banking Desktop application that contains:
--Register
--Login
--Design that resembles BankOfAmerica
--Withdraw
--Deposit
--Manage Account
+- Register
+- Login
+- Design that resembles BankOfAmerica
+- Withdraw
+- Deposit
+- Manage Account
 
 ##Updates:
--Updated the design interface
--Added icons
--Added hash password functionality 
--Added JFrame for updating password credentials
+- Updated the design interface
+- Added icons
+- Added hash password functionality 
+- Added JFrame for updating password credentials
 
 ## Register Panel
 
