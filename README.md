@@ -27,7 +27,7 @@ A mini full stack Java Banking Desktop application that contains:
 - Deposit
 - Manage Account
 
-##Updates:
+## Updates:
 - Updated the design interface
 - Added icons
 - Added hash password functionality 
