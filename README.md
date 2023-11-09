@@ -17,10 +17,21 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
-ATM MACHINE: 
+## ATM MACHINE: 
 
-A full stack Java application
+A mini full stack Java Banking Desktop application that contains:
+-Register
+-Login
+-Design that resembles BankOfAmerica
+-Withdraw
+-Deposit
+-Manage Account
 
+##Updates:
+-Updated the design interface
+-Added icons
+-Added hash password functionality 
+-Added JFrame for updating password credentials
 
 ## Register Panel
 
