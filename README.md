@@ -33,6 +33,12 @@ A mini full stack Java Banking Desktop application that contains:
 - Added hash password functionality 
 - Added JFrame for updating password credentials
 
+## Languages & Technologies Used: 
+- Java
+- JavaFX
+- JDBC
+- MySQL WorkBench
+
 ## Register Panel
 
 ![Snipaste_2023-11-08_17-52-25](https://github.com/sskyhigh/ATM-Machine/assets/98570636/b8a41ecf-5556-43ba-a304-f6ab1b7b3fae)
