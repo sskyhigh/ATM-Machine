@@ -33,7 +33,7 @@ public class RegisterPanel {
                 try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
                     // Set values for the placeholder
                     preparedStatement.setString(1, obtainUsername);
-                    preparedStatement.setString(2, pass);
+                    preparedStatement.setString(2, hashPassword.hash(pass));
 
                     // Execute the INSERT statement
                     try {

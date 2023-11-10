@@ -3,7 +3,6 @@ package atm;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
@@ -12,7 +11,7 @@ public class TransactionManager {
 	TransactionManager(String user, int transactionAmount, String transaction){
 		String jdbcURL = "jdbc:mysql://localhost:3306/boa";
 	    String username = "root";
-	    String password = "password";
+	    String password = "java";
 
 	    try {
 	        Class.forName("com.mysql.cj.jdbc.Driver");
@@ -24,42 +23,23 @@ public class TransactionManager {
 	    try (Connection connection = DriverManager.getConnection(jdbcURL, username, password)) {
 	        if (connection != null) {
 	            System.out.println("Connected to the database!");
-
-	            // Create an SQL SELECT statement to select the balance of the user
-	            String selectQuery = "SELECT balance FROM users WHERE username = ?";
-	            int oldBalance = 0;
+				int oldBalance = GetBalance.Get(user);
 	            int newBalance = 0;
 				String transactionMessage = "";
-
-	            try (PreparedStatement selectStatement = connection.prepareStatement(selectQuery)) {
-	                selectStatement.setString(1, user);
-
-	                try (ResultSet resultSet = selectStatement.executeQuery()) {
-	                    if (resultSet.next()) {
-	                        oldBalance = resultSet.getInt("balance");
-	                    }
-	                } catch (SQLException e) {
-	                    e.printStackTrace();
-	                    System.err.println("Error retrieving old balance.");
-	                }
-	            } catch (SQLException e) {
-	                e.printStackTrace();
-	                System.err.println("Error executing the SELECT statement.");
-	            }
 
 	            // Calculate the new balance
 	            if(transaction.equals("deposit")) {
 	            	  newBalance = oldBalance + transactionAmount;
-					  transactionMessage = "Amount deposited successfully.";
+					  transactionMessage = "Amount deposited successfully. New balance: ";
 	            }
 	            else if (transaction.equals("withdraw")) {
 	            		if (oldBalance - transactionAmount < 0) {
-	            			JOptionPane.showMessageDialog(null, "Withdrawal excceeded available Balance");
+	            			JOptionPane.showMessageDialog(null, "Withdrawal excceeded available balance. Available balance: " + oldBalance);
 	            			return;
 	            		}
 	            		else {
 	            			newBalance = oldBalance - transactionAmount;
-							transactionMessage = "Amount wtihdrawn successfully. ";
+							transactionMessage = "Amount wtihdrawn successfully. Remaining balance: ";
 	            		}
 	            }
 	            // Update the balance in the database
@@ -72,10 +52,11 @@ public class TransactionManager {
 	                int rowsAffected = updateStatement.executeUpdate();
 
 	                if (rowsAffected > 0) {
-	                    System.out.println(transactionMessage);
-	                    JOptionPane.showMessageDialog(null, transactionMessage);
+	                    System.out.println(transactionMessage + newBalance);
+	                    JOptionPane.showMessageDialog(null, transactionMessage + newBalance, "Success", JOptionPane.INFORMATION_MESSAGE, customImage.createCheckmarkImage());
 	                } else {
 	                    System.out.println("Transaction failed.");
+						JOptionPane.showMessageDialog(null, "Transaction faild.");
 	                }
 	            } catch (SQLException e) {
 	                e.printStackTrace();

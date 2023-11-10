@@ -31,7 +31,9 @@ public class Deposit implements ActionListener {
         formattedTextField.setBounds(240, 230, 120, 30);
         label.setBounds(255, 190, 160, 35);
 
-        frame.setSize(420, 420);
+        frame.setSize(420, 450);
+		frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setLayout(null);

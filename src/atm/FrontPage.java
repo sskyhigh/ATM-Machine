@@ -7,7 +7,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
-import java.awt.event.KeyEvent;
 
 public class FrontPage implements ActionListener, KeyListener {
 	private final JFrame frame = new JFrame("Login panel");
@@ -45,7 +44,7 @@ public class FrontPage implements ActionListener, KeyListener {
         statusPanel.add(statusLabel);
         statusPanel.add(time);
 
-        image = new ImageIcon(getClass().getResource("cover.png"));
+        image = new ImageIcon(getClass().getResource("../graphics/cover.png"));
         Image help = image.getImage();
         Image part = help.getScaledInstance(250, 50, java.awt.Image.SCALE_SMOOTH);
         image = new ImageIcon(part);
@@ -56,7 +55,9 @@ public class FrontPage implements ActionListener, KeyListener {
 
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 400);
+        frame.setSize(600, 500);
+		frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
         frame.setLayout(null);
 
         _username.setBounds(50, 70, 130, 30);

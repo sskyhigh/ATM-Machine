@@ -3,9 +3,19 @@ package atm;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public class Main {
+import javax.swing.SwingUtilities;
 
+public class Main {
 	public static void main(String[] args) throws IOException, URISyntaxException  {
-		new Register();
+
+		SwingUtilities.invokeLater(() -> {
+            try {
+				new Register();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
+        });
 	}
 }

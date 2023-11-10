@@ -4,8 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.text.NumberFormat;
 import javax.swing.*;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.text.NumberFormatter;
 
 public class Withdrawal implements ActionListener {
@@ -14,7 +12,7 @@ public class Withdrawal implements ActionListener {
 	private final JFrame frame = new JFrame("Withdrawal Page");
     private final JLabel label = new JLabel("Withdrawal amount: ");
     private final JButton goBack = new JButton("Go back");
-    private final JButton DepositButton = new JButton("Withdraw");
+    private final JButton withdrawButton = new JButton("Withdraw");
     private final JButton[] amount = new JButton[5];
     NumberFormat format = NumberFormat.getInstance();
     NumberFormatter formatter = new NumberFormatter(format);
@@ -33,7 +31,9 @@ public class Withdrawal implements ActionListener {
         formattedTextField.setBounds(240, 230, 120, 30);
         label.setBounds(255, 190, 160, 35);
 
-        frame.setSize(420, 420);
+        frame.setSize(420, 450);
+		frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setLayout(null);
@@ -64,15 +64,15 @@ public class Withdrawal implements ActionListener {
         goBack.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 18));
         goBack.addActionListener(this);
 
-        DepositButton.setFocusable(false);
-        DepositButton.setBounds(240, 320, 120, 35);
-        DepositButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
-        DepositButton.addActionListener(this);
+        withdrawButton.setFocusable(false);
+        withdrawButton.setBounds(240, 320, 120, 35);
+        withdrawButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+        withdrawButton.addActionListener(this);
 
         for (int i = 0; i < 5; ++i) frame.add(amount[i]);
 
         frame.add(goBack);
-        frame.add(DepositButton);
+        frame.add(withdrawButton);
         frame.add(label);
         frame.add(formattedTextField);
     }
@@ -85,7 +85,7 @@ public class Withdrawal implements ActionListener {
             } catch (Exception exception) {exception.printStackTrace();}
             frame.dispose();
         }
-        if (clicked.getSource() == DepositButton) {
+        if (clicked.getSource() == withdrawButton) {
             try {
                 int val = Integer.parseInt(formattedTextField.getText());
                 if (val > 10000) JOptionPane.showMessageDialog(null, "Amount cannot cross $10000!");

@@ -50,7 +50,7 @@ public class LoginPanel {
 	            
 	            try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
 	                preparedStatement.setString(1, enteredUsername);
-	                preparedStatement.setString(2, enteredPassword);
+	                preparedStatement.setString(2, hashPassword.hash(enteredPassword));
 
 	                try (ResultSet resultSet = preparedStatement.executeQuery()) {
 	                    return resultSet.next();
