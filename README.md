@@ -19,24 +19,12 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 ## BOFA ATM MACHINE: 
 
-A mini full stack Java Banking Desktop application that contains:
-- Register
-- Login
-- Design that resembles BankOfAmerica
-- Withdraw
-- Deposit
-- Manage Account
-
-## Updates:
-- Updated the design interface
-- Added icons
-- Added hash password functionality 
-- Added JFrame for updating password credentials
+A mini full stack Java Banking Desktop application that uses Java for both frontend and backend as well at MySQL for database. 
+App features bank of america register and login interface and deposit and withdraw money. Integrated JDBC API to call the backend. 
 
 ## Languages & Technologies Used: 
 - Java
 - JavaFX
-- JDBC
 - MySQL WorkBench
 
 ## Register Panel
@@ -48,9 +36,15 @@ A mini full stack Java Banking Desktop application that contains:
 
 ## Features & Functions:
 
-- [ ] Register/Sign Up/Log Out
-- [ ] Password is hashed (256bit encryption)
-- [ ] Deposit / Withdraw
-- [ ] Added log out function
-- [ ] Manage Account function: user can update username, password
-- [ ] form URL link for future suggestions
+- [x] Register/Sign Up/Log Out functionality
+- [x] Hashed Password (256bit encryption)
+- [x] Deposit / Withdraw
+- [x] Manage Account function: user can update username, password
+- [x] form URL link for future suggestions
+- [ ] Transferring money from one account to another
+
+## Updates:
+- Updated the design interface
+- Added icons
+- Added hash password functionality 
+- Added JFrame for updating password credentials
