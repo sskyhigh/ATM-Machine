@@ -141,9 +141,13 @@ public class BackPage extends Thread implements ActionListener {
             frame.dispose();
         }
         if (e.getSource() == checkBalance) {
-            JOptionPane.showMessageDialog(null,
-                    "Availabe account balance: $" + GetBalance.Get(username), "Balance Inquiry!",
-                    JOptionPane.INFORMATION_MESSAGE, customImage.createCheckmarkImage());
+            try {
+                JOptionPane.showMessageDialog(null,
+                        "Available account balance: $" + GetBalance.Get(username), "Balance Inquiry!",
+                        JOptionPane.INFORMATION_MESSAGE, customImage.createCheckmarkImage());
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         }
         if (e.getSource() == manageAccounts) {
             try {new ManageAccount(username);} catch (Exception exception) {

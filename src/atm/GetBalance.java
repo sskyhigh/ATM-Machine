@@ -1,12 +1,19 @@
 package atm;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.*;
+import java.util.Properties;
 
 public class GetBalance {
-    public static int Get(String user) {
-        String jdbcURL = "jdbc:mysql://localhost:3306/boa";
-        String username = "root";
-        String password = "password";
+    public static int Get(String user) throws IOException {
+        FileReader reader = new FileReader("credentials.properties");
+        Properties credentials = new Properties();
+        credentials.load(reader);
+
+        String jdbcURL = credentials.getProperty("link");
+        String username = credentials.getProperty("user");
+        String password = credentials.getProperty("password");
         int oldBalance = 0;
 
         try {

@@ -2,6 +2,7 @@ package atm;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class ManageAccount extends JFrame {
     private JTextField usernameField;
@@ -88,7 +89,11 @@ public class ManageAccount extends JFrame {
                 return;
             }
             // Update the user's username and password
-            new UpdateCredentials(username, newUsername, newPassword);
+            try {
+                new UpdateCredentials(username, newUsername, newPassword);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         });
         
         // Add the label and the panel to the frame
