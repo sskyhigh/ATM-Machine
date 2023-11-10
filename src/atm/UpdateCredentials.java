@@ -58,7 +58,6 @@ public class UpdateCredentials {
                         System.err.println("Error executing the UPDATE statement.");
                     }
                 }
-
             connection.close();
         }
 
