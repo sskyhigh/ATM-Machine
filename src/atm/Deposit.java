@@ -1,15 +1,14 @@
 package atm;
 
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
-import javax.swing.text.NumberFormatter;
 
 public class Deposit implements ActionListener {
-	private String username;
-	private final JFrame frame = new JFrame("Deposit Page");
+    private final JFrame frame = new JFrame("Deposit Page");
     private final JLabel label = new JLabel("Deposit amount: ");
     private final JButton goBack = new JButton("Go back");
     private final JButton DepositButton = new JButton("Deposit");
@@ -17,11 +16,10 @@ public class Deposit implements ActionListener {
     NumberFormat format = NumberFormat.getInstance();
     NumberFormatter formatter = new NumberFormatter(format);
     JFormattedTextField formattedTextField = new JFormattedTextField(formatter);
-
+    private String username;
 
     public Deposit(String username) {
-    	
-    	this.username = username;
+        this.username = username;
         formatter.setValueClass(Integer.class);
         formatter.setMinimum(0);
         formatter.setMaximum(Integer.MAX_VALUE);
@@ -32,7 +30,7 @@ public class Deposit implements ActionListener {
         label.setBounds(255, 190, 160, 35);
 
         frame.setSize(420, 450);
-		frame.setLocationRelativeTo(null);
+        frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);

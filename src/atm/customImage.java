@@ -16,7 +16,6 @@ public class customImage {
         g.setStroke(new BasicStroke(6)); // Line thickness
         g.drawLine(10, 18, 14, 22);
         g.drawLine(16, 22, 24, 10);
-
         g.dispose();
 
         return new ImageIcon(image);

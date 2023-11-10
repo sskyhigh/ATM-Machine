@@ -1,15 +1,16 @@
+/*Designing the front*/
 package atm;
 
+import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import javax.swing.*;
-import javax.swing.border.BevelBorder;
 
 public class FrontPage implements ActionListener, KeyListener {
-	private final JFrame frame = new JFrame("Login panel");
+    private final JFrame frame = new JFrame("Login panel");
     private final JLabel _username = new JLabel("User ID: ");
     private final JLabel labelPassword = new JLabel("Password:");
     private final JLabel back;
@@ -33,7 +34,6 @@ public class FrontPage implements ActionListener, KeyListener {
     private JSeparator separator2 = new JSeparator();
 
     public FrontPage() throws IOException, URISyntaxException {
-
         statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
         frame.add(statusPanel, BorderLayout.SOUTH);
         statusPanel.setPreferredSize(new Dimension(frame.getWidth(), 16));
@@ -56,7 +56,7 @@ public class FrontPage implements ActionListener, KeyListener {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 500);
-		frame.setLocationRelativeTo(null);
+        frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setLayout(null);
 
@@ -214,7 +214,7 @@ public class FrontPage implements ActionListener, KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        
+
     }
 
     @Override

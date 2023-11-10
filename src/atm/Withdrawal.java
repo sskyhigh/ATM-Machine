@@ -1,15 +1,15 @@
 package atm;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.text.NumberFormat;
 import javax.swing.*;
 import javax.swing.text.NumberFormatter;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 
 public class Withdrawal implements ActionListener {
-		
-	private String username;
-	private final JFrame frame = new JFrame("Withdrawal Page");
+
+    private final JFrame frame = new JFrame("Withdrawal Page");
     private final JLabel label = new JLabel("Withdrawal amount: ");
     private final JButton goBack = new JButton("Go back");
     private final JButton withdrawButton = new JButton("Withdraw");
@@ -17,11 +17,10 @@ public class Withdrawal implements ActionListener {
     NumberFormat format = NumberFormat.getInstance();
     NumberFormatter formatter = new NumberFormatter(format);
     JFormattedTextField formattedTextField = new JFormattedTextField(formatter);
-
+    private String username;
 
     public Withdrawal(String username) {
-    	
-    	this.username = username;
+        this.username = username;
         formatter.setValueClass(Integer.class);
         formatter.setMinimum(0);
         formatter.setMaximum(Integer.MAX_VALUE);
@@ -32,7 +31,7 @@ public class Withdrawal implements ActionListener {
         label.setBounds(255, 190, 160, 35);
 
         frame.setSize(420, 450);
-		frame.setLocationRelativeTo(null);
+        frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -90,7 +89,7 @@ public class Withdrawal implements ActionListener {
                 int val = Integer.parseInt(formattedTextField.getText());
                 if (val > 10000) JOptionPane.showMessageDialog(null, "Amount cannot cross $10000!");
                 else {
-                	new TransactionManager(username, val, "withdraw");
+                    new TransactionManager(username, val, "withdraw");
                 }
             } catch (Exception exception) {JOptionPane.showMessageDialog(null, "invalid amount");}
         }
@@ -120,5 +119,4 @@ public class Withdrawal implements ActionListener {
             } catch (Exception exception) {exception.printStackTrace();}
         }
     }
-
 }
