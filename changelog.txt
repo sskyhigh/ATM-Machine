@@ -5,8 +5,8 @@
 5. Added the functionality to hash the password before storing in the database.
 6. Added icons to the buttons in main page for better user interaction.
 7. Remastered the colors and fonts to achieve a clearer interface.
-8. Removed the annoying outline on the text of a buttun when clicked.
+8. Removed the annoying outline on the text of a button when clicked.
 9. Disabled resizable windows to avoid graphics bugs.
 10. Added interactive messages for better user understanding.
-
 11. Some other minor bug fixes and code optimizations.
+12. Patched a bug where users can register with empty boxes
