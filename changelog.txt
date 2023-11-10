@@ -10,3 +10,5 @@
 10. Added interactive messages for better user understanding.
 11. Some other minor bug fixes and code optimizations.
 12. Patched a bug where users can register with empty boxes
+13. Patched hard coding database information
+14. Added more try catch for additional debugging.
