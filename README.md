@@ -19,10 +19,10 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 ## ***BOFA*** ATM MACHINE: 
 
-<p>A mini full stack Java Banking Desktop application that uses **Java** for both frontend and backend as well at **MySQL** for database. </p>
-<p>App features ***Bank of America*** (BOFA) register & login interface as well as **deposit** and **withdraw** functionality. </p>
-<p>Integrated **JDBC API** to call database. LIB file is also provided to connect to the database. </p>
-<p>Further instructions will be provided for local use. Please check ***changelog.txt*** for program updates. </p>
+A mini full stack Java Banking Desktop application that uses **Java** for both frontend and backend as well at **MySQL** for database.\ 
+App features ***Bank of America*** (BOFA) register & login interface as well as **deposit** and **withdraw** functionality.\ 
+Integrated **JDBC API** to call database. LIB file is also provided to connect to the database.\
+Further instructions will be provided for local use. Please check ***changelog.txt*** for program updates.\
 
 ## Languages & Technologies Used: 
 - Java 
