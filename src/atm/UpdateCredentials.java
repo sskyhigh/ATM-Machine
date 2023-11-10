@@ -12,7 +12,7 @@ public class UpdateCredentials {
     public UpdateCredentials(String oldUsername, String newUsername, String newPassword) {
         String jdbcURL = "jdbc:mysql://localhost:3306/boa";
         String username = "root";
-        String password = "java";
+        String password = "password";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
