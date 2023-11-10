@@ -1,5 +1,7 @@
 package atm;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Connection;
@@ -10,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Properties;
 
 public class LoginPanel {
 	
@@ -29,11 +32,16 @@ public class LoginPanel {
             new FrontPage();
         }
     }
-	public boolean checkLogin(String enteredUsername, String enteredPassword) {
-	    String jdbcURL = "jdbc:mysql://localhost:3306/boa";
-	    String username = "root";
-	    String password = "password";
+	public boolean checkLogin(String enteredUsername, String enteredPassword) throws IOException {
+		FileReader reader = new FileReader("credentials.properties");
+		Properties credentials = new Properties();
+		credentials.load(reader);
 
+		String jdbcURL = credentials.getProperty("link");
+		String username = credentials.getProperty("user");
+		String password = credentials.getProperty("password");
+
+		System.out.println();
 	    try {
 	        Class.forName("com.mysql.cj.jdbc.Driver");
 	    } catch (ClassNotFoundException e) {

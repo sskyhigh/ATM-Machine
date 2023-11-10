@@ -1,21 +1,25 @@
 package atm;
 
+import javax.swing.*;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
-
-import javax.swing.JOptionPane;
-
-import java.sql.PreparedStatement;
+import java.sql.*;
+import java.util.Properties;
 
 public class RegisterPanel {
-	public RegisterPanel(String obtainUsername, String pass) throws IOException, URISyntaxException {
-        String jdbcURL = "jdbc:mysql://localhost:3306/boa";
-        String username = "root";
-        String password = "password";
+    public RegisterPanel(String obtainUsername, String pass) throws IOException,
+            URISyntaxException {
+        FileReader reader = new FileReader("credentials.properties");
+        Properties credentials = new Properties();
+        credentials.load(reader);
+        System.out.println(credentials.getProperty("user"));
+        System.out.println(credentials.getProperty("password"));
+        System.out.println(credentials.getProperty("link"));
+
+        String jdbcURL = credentials.getProperty("link");
+        String username = credentials.getProperty("user");
+        String password = credentials.getProperty("password");
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -27,10 +31,11 @@ public class RegisterPanel {
             Connection connection = DriverManager.getConnection(jdbcURL, username, password);
             if (connection != null) {
                 System.out.println("Connected to the database!");
-             // Create an SQL INSERT statement with placeholder
+                // Create an SQL INSERT statement with placeholder
                 String insertQuery = "INSERT INTO users (username, password) VALUES (?, ?)";
 
-                try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+                try (PreparedStatement preparedStatement =
+                             connection.prepareStatement(insertQuery)) {
                     // Set values for the placeholder
                     preparedStatement.setString(1, obtainUsername);
                     preparedStatement.setString(2, hashPassword.hash(pass));
@@ -47,10 +52,13 @@ public class RegisterPanel {
                         }
                     } catch (SQLIntegrityConstraintViolationException e) {
                         if (e.getErrorCode() == 1062) {
-                        	JOptionPane.showMessageDialog(null, "Error: Username already exists. Please choose a different username.", "Error", JOptionPane.ERROR_MESSAGE);
-                            System.err.println("Error: Username already exists. Please choose a different username.");
+                            JOptionPane.showMessageDialog(null, "Error: Username already exists. " +
+                                    "Please choose a different username.", "Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                            System.err.println("Error: Username already exists. Please choose a " +
+                                    "different username.");
                             new Register();
-                            
+
                         } else {
                             e.printStackTrace();
                             System.err.println("Error executing the INSERT statement.");

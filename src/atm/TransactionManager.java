@@ -1,17 +1,25 @@
 package atm;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Properties;
 
 import javax.swing.JOptionPane;
 
 public class TransactionManager {
-	TransactionManager(String user, int transactionAmount, String transaction){
-		String jdbcURL = "jdbc:mysql://localhost:3306/boa";
-	    String username = "root";
-	    String password = "password";
+	TransactionManager(String user, int transactionAmount, String transaction) throws IOException {
+		FileReader reader = new FileReader("credentials.properties");
+		Properties credentials = new Properties();
+		credentials.load(reader);
+
+		String jdbcURL = credentials.getProperty("link");
+		String username = credentials.getProperty("user");
+		String password = credentials.getProperty("password");
 
 	    try {
 	        Class.forName("com.mysql.cj.jdbc.Driver");
