@@ -43,5 +43,6 @@ A mini full stack Java Banking Desktop application that contains:
 
 ![Snipaste_2023-11-08_17-52-25](https://github.com/sskyhigh/ATM-Machine/assets/98570636/b8a41ecf-5556-43ba-a304-f6ab1b7b3fae)
 
-
+## Frontpage: 
+![image](https://github.com/sskyhigh/ATM-Machine/assets/98570636/a06eb577-248e-4950-a225-1e988777d67b)
 
