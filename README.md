@@ -21,7 +21,7 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 A mini full stack Java Banking Desktop application that uses **Java** for both frontend and backend as well at **MySQL** for database. 
 App features ***Bank of America*** (BOFA) register and login interface and **deposit** and **withdraw** money. Integrated **JDBC API** to call database. 
-LIB file is also provided to connect to the database. Further instructions will be provided for local use. Please check changelog.txt for program updates. 
+LIB file is also provided to connect to the database. Further instructions will be provided for local use. Please check ***changelog.txt*** for program updates. 
 
 ## Languages & Technologies Used: 
 - Java 
@@ -39,7 +39,7 @@ LIB file is also provided to connect to the database. Further instructions will 
 - [x] Register/Sign Up/Log Out functionality
 - [x] Hashed Password `(256bit encryption)`
 - [x] Deposit / Withdraw
-- [x] Manage Account function: user can update username, password
+- [x] Manage Account function: user can update ***username*** & ***password***
 - [x] form URL link for future suggestions
 - [ ] Transferring money from one account to another
 
