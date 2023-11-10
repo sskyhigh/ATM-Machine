@@ -67,7 +67,6 @@ public class ManageAccount extends JFrame {
                 exception.printStackTrace();
             }
             dispose();
-
         });
         
         // Submit button
