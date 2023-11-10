@@ -10,7 +10,7 @@ public class GetBalance {
      public static int Get(String user){
 		String jdbcURL = "jdbc:mysql://localhost:3306/boa";
 	    String username = "root";
-	    String password = "java";
+	    String password = "password";
         int oldBalance = 0;
 
 	    try {
