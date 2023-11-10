@@ -48,9 +48,9 @@ A mini full stack Java Banking Desktop application that contains:
 
 ## Features & Functions:
 
--[ ] Register/Sign Up/Log Out
--[ ] Password is hashed (256bit encryption)
--[ ] Deposit / Withdraw
--[ ] Added log out function
--[ ] Manage Account function: user can update username, password
--[ ] form URL link for future suggestions
+- [ ] Register/Sign Up/Log Out
+- [ ] Password is hashed (256bit encryption)
+- [ ] Deposit / Withdraw
+- [ ] Added log out function
+- [ ] Manage Account function: user can update username, password
+- [ ] form URL link for future suggestions
