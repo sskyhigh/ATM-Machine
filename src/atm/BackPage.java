@@ -165,7 +165,7 @@ public class BackPage extends Thread implements ActionListener {
 	        }
 	        if (e.getSource() == help) {
 	            try {
-	                String url = "https://bit.ly/3EUv5QZ";
+	                String url = "https://runcat.us";
 	                Desktop.getDesktop().browse(URI.create(url));
 	            } catch (IOException ioException) {System.out.println(ioException.getMessage());}
 	        }
