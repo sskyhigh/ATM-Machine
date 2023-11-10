@@ -11,7 +11,7 @@ public class TransactionManager {
 	TransactionManager(String user, int transactionAmount, String transaction){
 		String jdbcURL = "jdbc:mysql://localhost:3306/boa";
 	    String username = "root";
-	    String password = "java";
+	    String password = "password";
 
 	    try {
 	        Class.forName("com.mysql.cj.jdbc.Driver");
@@ -44,7 +44,6 @@ public class TransactionManager {
 	            }
 	            // Update the balance in the database
 	            String updateQuery = "UPDATE users SET balance = ? WHERE username = ?";
-
 	            try (PreparedStatement updateStatement = connection.prepareStatement(updateQuery)) {
 					updateStatement.setInt(1, newBalance);
 	                updateStatement.setString(2, user);
