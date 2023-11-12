@@ -48,7 +48,7 @@ Further instructions will be provided for local use. Please check ***changelog.t
 - [x] Deposit / Withdraw
 - [x] Manage Account function: user can update ***username*** & ***password***
 - [x] form URL link for future suggestions
-- [ ] Transferring money from one account to another
+- [x] Transferring money from one account to another
 
 ## Updates:
 - [x] Updated the design interface
