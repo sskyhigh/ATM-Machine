@@ -10,7 +10,7 @@ public class Main {
 
 		SwingUtilities.invokeLater(() -> {
             try {
-				new Register();
+				new FrontPage();
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (URISyntaxException e) {

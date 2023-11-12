@@ -9,16 +9,20 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 public class BackPage extends Thread implements ActionListener {
     private final JFrame frame = new JFrame("Main Panel");
     private final JButton manageAccounts = new JButton("Manage Account");
     private final JButton checkBalance = new JButton("Check Balance");
     private final JButton withdraw = new JButton("Withdraw");
     private final JButton deposit = new JButton("Deposit");
-    private final JButton help = new JButton("Help");
+    private final JButton transfer = new JButton("Transfer");
     private final JButton feedback = new JButton("Feedback");
     private final JButton logout = new JButton("Logout");
     private final JLabel title;
+    private final JButton helpButton;
     private final String username;
 
     public BackPage(String username) {
@@ -34,13 +38,45 @@ public class BackPage extends Thread implements ActionListener {
         // Create a panel for the top section with the welcome message
         JPanel topPanel = new JPanel();
         topPanel.setBackground(Color.decode("#0F4C81"));
-        topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        topPanel.setLayout(new BorderLayout());
         topPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
+        JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        titlePanel.setBackground(Color.decode("#0F4C81"));
         title = new JLabel("Welcome, " + username);
         title.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 24));
         title.setForeground(Color.WHITE);
-        topPanel.add(title);
+        titlePanel.add(title);
+        topPanel.add(titlePanel, BorderLayout.CENTER);
+
+        // help button top right corner
+        JPanel helpPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        helpPanel.setBackground(Color.decode("#0F4C81"));
+        URL helpUrl1 = getClass().getResource("../graphics/help1.png");
+        URL helpUrl2 = getClass().getResource("../graphics/help2.png");
+        helpButton = new JButton();
+        helpButton.setIcon(new ImageIcon(helpUrl1));
+        helpButton.setFocusPainted(false);
+        helpButton.setBackground(Color.decode("#0F4C81"));
+        helpButton.addActionListener(this);
+        helpButton.setBorder(null);
+        helpButton.setContentAreaFilled(false);
+        helpPanel.add(helpButton);
+        topPanel.add(helpPanel, BorderLayout.EAST);
+
+        helpButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Mouse entered, change the background color or perform other actions
+                helpButton.setIcon(new ImageIcon(helpUrl2));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Mouse exited, revert to the default background color or perform other actions
+                helpButton.setIcon(new ImageIcon(helpUrl1));
+            }
+        });
 
         // Create a panel for the buttons
         JPanel buttonPanel = new JPanel();
@@ -49,7 +85,7 @@ public class BackPage extends Thread implements ActionListener {
         buttonPanel.setBackground(Color.decode("#F0F0F0"));
 
         // Customize the buttons
-        JButton[] buttons = {manageAccounts, checkBalance, withdraw, deposit, help, feedback};
+        JButton[] buttons = {manageAccounts, checkBalance, withdraw, deposit, transfer, feedback};
         for (JButton button : buttons) {
             button.setFocusPainted(false);
             button.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 18));
@@ -62,7 +98,7 @@ public class BackPage extends Thread implements ActionListener {
         checkBalance.addActionListener(this);
         withdraw.addActionListener(this);
         deposit.addActionListener(this);
-        help.addActionListener(this);
+        transfer.addActionListener(this);
         feedback.addActionListener(this);
 
         // Add the buttons to the button panel
@@ -91,6 +127,20 @@ public class BackPage extends Thread implements ActionListener {
         logout.setVerticalTextPosition(SwingConstants.BOTTOM);
         frame.add(logout, BorderLayout.SOUTH);
 
+        logout.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Mouse entered, change the background color or perform other actions
+                logout.setBackground(Color.decode("#CD6155"));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Mouse exited, revert to the default background color or perform other actions
+                logout.setBackground(Color.decode("#FFA500"));
+            }
+        });
+
         frame.add(logout, BorderLayout.SOUTH);
 
         // Load the icons for the buttons
@@ -103,12 +153,13 @@ public class BackPage extends Thread implements ActionListener {
     private void loadIcons() {
         // An array of icon file names
         String[] iconFiles = {"../graphics/manage.png", "../graphics/cash.png", "../graphics" +
-                "/deposit.png", "../graphics/withdraw.png", "../graphics/help.png",
+                "/deposit.png", "../graphics/withdraw.png", "../graphics/transfer.png",
                 "../graphics" + "/feedback.png"};
         // An array of buttons
-        JButton[] buttons = {manageAccounts, checkBalance, withdraw, deposit, help, feedback};
+        JButton[] buttons = {manageAccounts, checkBalance, withdraw, deposit, transfer, feedback};
         // A loop to load each icon and set it to the corresponding button
         for (int i = 0; i < iconFiles.length; i++) {
+            final int buttonIndex = i;
             // Get the URL of the icon file relative to the classpath
             URL iconURL = getClass().getResource(iconFiles[i]);
             // Create an ImageIcon object from the URL
@@ -129,6 +180,20 @@ public class BackPage extends Thread implements ActionListener {
             buttons[i].setHorizontalTextPosition(SwingConstants.CENTER);
             // Set the vertical text position of the button to bottom
             buttons[i].setVerticalTextPosition(SwingConstants.BOTTOM);
+
+            buttons[i].addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Mouse entered, change the background color or perform other actions
+                buttons[buttonIndex].setBackground(Color.decode("#27AE60"));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Mouse exited, revert to the default background color or perform other actions
+                buttons[buttonIndex].setBackground(Color.decode("#1F7AC4"));
+            }
+        });
         }
     }
 
@@ -136,7 +201,7 @@ public class BackPage extends Thread implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == withdraw) {
             try {
-                new Withdrawal(username);
+                new WithdrawalDeposit(username, "Withdraw");
             } catch (Exception exception) {exception.printStackTrace();}
             frame.dispose();
         }
@@ -156,7 +221,7 @@ public class BackPage extends Thread implements ActionListener {
             frame.dispose();
         }
         if (e.getSource() == deposit) {
-            try {new Deposit(username);} catch (Exception exception) {
+            try {new WithdrawalDeposit(username, "Deposit");} catch (Exception exception) {
                 exception.printStackTrace();
             }
             frame.dispose();
@@ -171,15 +236,18 @@ public class BackPage extends Thread implements ActionListener {
                 frame.dispose();
             }
         }
-        if (e.getSource() == help) {
-            try {
-                String url = "https://runcat.us";
-                Desktop.getDesktop().browse(URI.create(url));
-            } catch (IOException ioException) {System.out.println(ioException.getMessage());}
+        if (e.getSource() == transfer) {
+            new Transfer(username);
         }
         if (e.getSource() == feedback) {
             try {
                 String url = "https://forms.gle/e9G5vLM6J6AiGJ8i8";
+                Desktop.getDesktop().browse(URI.create(url));
+            } catch (IOException ioException) {System.out.println(ioException.getMessage());}
+        }
+        if (e.getSource() == helpButton) {
+            try {
+                String url = "https://runcat.us";
                 Desktop.getDesktop().browse(URI.create(url));
             } catch (IOException ioException) {System.out.println(ioException.getMessage());}
         }

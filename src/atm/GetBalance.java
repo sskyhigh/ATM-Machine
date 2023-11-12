@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.Properties;
 
 public class GetBalance {
-    public static int Get(String user) throws IOException {
+    public static Integer Get(String user) throws IOException {
         FileReader reader = new FileReader("credentials.properties");
         Properties credentials = new Properties();
         credentials.load(reader);
@@ -14,13 +14,13 @@ public class GetBalance {
         String jdbcURL = credentials.getProperty("link");
         String username = credentials.getProperty("user");
         String password = credentials.getProperty("password");
-        int oldBalance = 0;
+        Integer oldBalance = null;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            return 0; // Exit if the driver class is not found
+            return null; // Exit if the driver class is not found
         }
 
         try (Connection connection = DriverManager.getConnection(jdbcURL, username, password)) {
@@ -40,6 +40,7 @@ public class GetBalance {
                     } catch (SQLException e) {
                         e.printStackTrace();
                         System.err.println("Error retrieving old balance.");
+                        oldBalance = -1;
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
