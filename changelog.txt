@@ -12,3 +12,5 @@
 12. Patched a bug where users can register with empty boxes
 13. Patched hard coding database information
 14. Added more try catch for additional debugging.
+15. Added a feature where users can send funds to other users.
+16. Fixed a bug where users are not allowed to send to oneself.
