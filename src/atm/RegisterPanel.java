@@ -52,11 +52,10 @@ public class RegisterPanel {
                         }
                     } catch (SQLIntegrityConstraintViolationException e) {
                         if (e.getErrorCode() == 1062) {
-                            JOptionPane.showMessageDialog(null, "Error: Username already exists. " +
-                                    "Please choose a different username.", "Error",
+                            JOptionPane.showMessageDialog(null, "Error: Username already exists. "
+                                    + "Please choose a different username.", "Error",
                                     JOptionPane.ERROR_MESSAGE);
-                            System.err.println("Error: Username already exists. Please choose a " +
-                                    "different username.");
+                            System.err.println("Error: Username already exists. Please choose a " + "different username.");
                             new Register();
 
                         } else {
@@ -68,7 +67,6 @@ public class RegisterPanel {
                     e.printStackTrace();
                     System.err.println("Error preparing the INSERT statement.");
                 }
-
                 connection.close();
             }
         } catch (SQLException e) {

@@ -61,7 +61,7 @@ public class Transfer extends JFrame {
         goBack.setFocusPainted(false);
         goBack.setBackground(Color.PINK);
         goBack.setForeground(Color.WHITE);
-        goBack.setBounds(170, 165, 120, 40);
+        goBack.setBounds(310, 165, 120, 40);
         inputPanel.add(goBack);
 
         goBack.addActionListener(e -> {
@@ -78,7 +78,7 @@ public class Transfer extends JFrame {
         transferButton.setFocusPainted(false);
         transferButton.setBackground(Color.decode("#1F7AC4"));
         transferButton.setForeground(Color.WHITE);
-        transferButton.setBounds(310, 165, 120, 40);
+        transferButton.setBounds(170, 165, 120, 40);
         inputPanel.add(transferButton);
 
         transferButton.addActionListener(e -> {
@@ -93,6 +93,12 @@ public class Transfer extends JFrame {
                             "name carefully!");
                     return;
                 }
+
+                if (receiver.equals(username)) {
+                    JOptionPane.showMessageDialog(null, "You cannot send funds to yourself.");
+                    return;
+                }
+
                 new TransactionManager(sender, transferAmount, receiver);
             } catch (Exception exception) {
                 JOptionPane.showMessageDialog(null, "Invalid amount. Try inserting digits.");
