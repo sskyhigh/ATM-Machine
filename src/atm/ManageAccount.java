@@ -58,7 +58,7 @@ public class ManageAccount extends JFrame {
         goBack.setFocusPainted(false);
         goBack.setBackground(Color.PINK);
         goBack.setForeground(Color.WHITE);
-        goBack.setBounds(170, 165, 120, 40);
+        goBack.setBounds(310, 165, 120, 40);
         inputPanel.add(goBack);
 
         goBack.addActionListener(e -> {
@@ -75,7 +75,7 @@ public class ManageAccount extends JFrame {
         submitButton.setFocusPainted(false);
         submitButton.setBackground(Color.decode("#1F7AC4"));
         submitButton.setForeground(Color.WHITE);
-        submitButton.setBounds(310, 165, 120, 40);
+        submitButton.setBounds(170, 165, 120, 40);
         inputPanel.add(submitButton);
 
         submitButton.addActionListener(e -> {

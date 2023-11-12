@@ -2,12 +2,12 @@ package atm;
 
 import javax.swing.*;
 import javax.swing.text.NumberFormatter;
-
 import java.awt.*;
 import java.text.NumberFormat;
 
 public class Transfer extends JFrame {
 
+    private final JLabel imgLabel;
     NumberFormat format = NumberFormat.getInstance();
     NumberFormatter formatter = new NumberFormatter(format);
     JFormattedTextField formattedTextField = new JFormattedTextField(formatter);
@@ -16,7 +16,6 @@ public class Transfer extends JFrame {
     private JLabel receiverLabel = new JLabel("Enter receiver's username");
     private JButton goBack;
     private JButton transferButton;
-    private final JLabel imgLabel;
     private ImageIcon image;
 
     public Transfer(String username) {
@@ -73,7 +72,7 @@ public class Transfer extends JFrame {
             }
             dispose();
         });
-        
+
         // Submit button
         transferButton = new JButton("Send");
         transferButton.setFocusPainted(false);
@@ -89,19 +88,17 @@ public class Transfer extends JFrame {
                 int transferAmount = Integer.parseInt(formattedTextField.getText());
                 String receiver = receiverField.getText();
 
-            if (transferAmount <= 0 || receiver.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null, "Please enter the amount and receiver's name carefully!");
-                return;
-            }
-            
-            new TransactionManager(sender, transferAmount, receiver);
-                
+                if (transferAmount <= 0 || receiver.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please enter the amount and receiver's " +
+                            "name carefully!");
+                    return;
+                }
+                new TransactionManager(sender, transferAmount, receiver);
             } catch (Exception exception) {
                 JOptionPane.showMessageDialog(null, "Invalid amount. Try inserting digits.");
             }
         });
-        
+
         // Add the label and the panel to the frame
         add(imgLabel);
         add(inputPanel);
