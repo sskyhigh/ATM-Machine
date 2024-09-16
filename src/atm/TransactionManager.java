@@ -72,7 +72,7 @@ public class TransactionManager {
 						}
 							int receiverNewBalance = receiverOldBalance + transactionAmount; // calculate receiver's balance
 							newBalance = oldBalance - transactionAmount; // calculate sender's balance
-							transactionMessage = "Funds transfered successfully! ";
+							transactionMessage = "Funds transferred successfully! ";
 							updateBalance(connection, user, newBalance, transactionMessage); // update the balance of the sender
 							updateBalance(connection, transaction, receiverNewBalance, transactionMessage); // update the balance of the receiver
 						}
