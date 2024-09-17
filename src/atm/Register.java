@@ -217,7 +217,7 @@ public class Register implements ActionListener {
         }
     }
 
-    public void textAction(KeyEvent event) {
+    private void textAction(KeyEvent event) {
         if (event.getSource().equals(KeyEvent.VK_ENTER)) {
             obtainUsername = userField.getText();
             password = String.valueOf(passwordField.getPassword());
