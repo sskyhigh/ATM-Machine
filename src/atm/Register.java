@@ -1,15 +1,15 @@
 package atm;
 
+import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import javax.swing.*;
-import javax.swing.border.BevelBorder;
 
 public class Register implements ActionListener {
-	private final JFrame frame = new JFrame("Register Panel");
+    private final JFrame frame = new JFrame("Register Panel");
     private final JLabel _username = new JLabel("User ID: ");
     private final JLabel labelPassword = new JLabel("Password:");
     private final JLabel back;
@@ -24,16 +24,15 @@ public class Register implements ActionListener {
     private final JPasswordField passwordField = new JPasswordField();
     private final JButton login = new JButton("Register");
     private final JPanel statusPanel = new JPanel();
+    private final JLabel support = new JLabel("Don't have email?");
+    private final JCheckBox checkBox = new JCheckBox("Save this user ID");
+    private final JSeparator separator = new JSeparator();
+    private final JSeparator separator2 = new JSeparator();
     private String obtainUsername;
     private String password;
-    private JLabel support = new JLabel("Don't have email?");
-    private JCheckBox checkBox = new JCheckBox("Save this user ID");
     private ImageIcon image;
-    private JSeparator separator = new JSeparator();
-    private JSeparator separator2 = new JSeparator();
 
     public Register() throws IOException, URISyntaxException {
-
         statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
         frame.add(statusPanel, BorderLayout.SOUTH);
         statusPanel.setPreferredSize(new Dimension(frame.getWidth(), 16));
@@ -56,7 +55,7 @@ public class Register implements ActionListener {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 500);
-		frame.setLocationRelativeTo(null);
+        frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setLayout(null);
 
@@ -124,7 +123,6 @@ public class Register implements ActionListener {
                 } catch (IOException e1) {System.out.println(e1.getMessage());}
             }
         });
-
 
         logging_in.setBounds(350, 135, 130, 30);
         logging_in.setForeground(Color.decode("#36C"));
@@ -205,8 +203,7 @@ public class Register implements ActionListener {
             obtainUsername = userField.getText();
             password = String.valueOf(passwordField.getPassword());
 
-            if (obtainUsername.isEmpty() || password.isEmpty())
-            {
+            if (obtainUsername.isEmpty() || password.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Username or password cannot be empty.");
                 return;
             }
@@ -222,8 +219,7 @@ public class Register implements ActionListener {
             obtainUsername = userField.getText();
             password = String.valueOf(passwordField.getPassword());
 
-            if (obtainUsername.isEmpty() || password.isEmpty())
-            {
+            if (obtainUsername.isEmpty() || password.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Username or password cannot be empty.");
                 return;
             }
@@ -233,5 +229,4 @@ public class Register implements ActionListener {
             frame.dispose();
         }
     }
-
 }
